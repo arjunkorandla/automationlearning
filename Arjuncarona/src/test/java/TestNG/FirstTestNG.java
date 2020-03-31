@@ -7,7 +7,7 @@ public class FirstTestNG {
 
         @Test(priority=1)
         void openURL(){
-            System.out.println("URL opened");
+            System.out.println("URL has been opened");
             Assert.assertTrue(true);
 
         }
