@@ -1,0 +1,17 @@
+<suite name="All Test Suite">
+    <test name="Seleniumtest">
+        <classes>
+            <class name="TestNG.CrossBrowserTestng"/>
+
+
+
+
+
+
+        </classes>
+
+
+    </test>
+
+
+</suite>
