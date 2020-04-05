@@ -38,6 +38,7 @@ public class FirstTestNG {
         {
             System.out.println("loogout test");
             Assert.assertTrue(true);
+
         }
     }
 
