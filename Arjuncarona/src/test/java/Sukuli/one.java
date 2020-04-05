@@ -1,5 +1,6 @@
 package Sukuli;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,7 +11,7 @@ import org.sikuli.script.Screen;
 public class one {
 	public static void main(String[] args) throws InterruptedException, FindFailed {
 		// TODO Auto-generated method stub
-		System.setProperty("webdriver.chrome.driver", "C:\\Drverssel\\cromedrivers\\chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
 
 		WebDriver driver = new ChromeDriver();
 
@@ -21,8 +22,8 @@ public class one {
 		
 		String inputimg = "C:\\Users\\koran\\Desktop\\java\\selinium\\ClassExamples\\FileUpload using Sikuli\\Fruites\\inputfiles";
 		String inputselect = "C:\\Users\\koran\\Desktop\\java\\selinium\\ClassExamples\\FileUpload using Sikuli\\Fruites";
-		
-		Screen s = new Screen();
+
+        Screen s = new Screen();
 		
 		Pattern inpufilepath = new Pattern(inputselect + "FileTextBox.PNG");
 		Pattern click = new Pattern(inputselect + "OpenButton.PNG");

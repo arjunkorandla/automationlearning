@@ -1,44 +1,47 @@
 package TestNG;
 
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+public class DataproviderDemo {
 
-public class Dataprovier {
-    WebDriver driver;
-
-    @BeforClass
-    void setup() {
+ WebDriver driver;
+    @BeforeClass
+    void setup()
+    {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
     }
 
     @Test(dataProvider = "users")
-    void login(String uname, String pwd) {
+    void loginTest(String username, String pwd)
+    {
         driver.get("http://newtours.demoaut.com/");
-        driver.findElement(By.name("userName")).sendKeys(uname);
+        driver.findElement(By.name("userName")).sendKeys(username);
         driver.findElement(By.name("password")).sendKeys(pwd);
         driver.findElement(By.name("login")).click();
-        driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[1]/td[2]")).click();
+        Assert.assertEquals(driver.getTitle(),"Find a Flight: Mercury Tours:");
 
     }
 
-    @DataProvider(name = "Users")
-    Object[] loginDetails() {
-        String data[][] = {{"mercury", "mercury"}, {"mer", "mer"}, {"mercury1", "mercury1"}};
+    @DataProvider(name="users")
+    Object[][] loginData()
+    {
+        String data[][] = {{"mercury", "mercury"},{"mer","mer"}};
         return data;
     }
 
     @AfterClass
-    void close() {
+    void closeBrowser()
+    {
         driver.close();
     }
-
 
 }

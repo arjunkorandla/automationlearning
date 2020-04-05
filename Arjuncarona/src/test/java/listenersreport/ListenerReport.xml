@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Extend-report">
+
+<suite name="extendreport">
     <listeners>
-        <listener class-name="ListenersReport.ListenersOne"/>
+        <listener class-name="listenersreport.ListenersOne"/>
     </listeners>
-    <test name="ListenerReport">
+
+    <test name="listenerReport">
         <classes>
-
-            <class name="ListenersReport.LoginSCreenshot"/>
-
-
+            <class name="listenersreport.LoginSCreenshot"/>
         </classes>
-
-
     </test>
-
-
 </suite>

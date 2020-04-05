@@ -1,4 +1,4 @@
-package Listnears;
+package listenersreport;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -56,7 +56,7 @@ public class ListenersOne  extends TestListenerAdapter {
         logger=extent.createTest(tr.getName()); // create new entry in the report
         logger.log(Status.FAIL,MarkupHelper.createLabel(tr.getName(),ExtentColor.RED)); // send the passed information to the report with GREEN color highlighted
 
-        String screenshotPath=System.getProperty("user.dir")+"\\Screenshots\\"+tr.getName()+".png";
+        String screenshotPath=System.getProperty("user.dir")+"/Screenshots/"+tr.getName()+".png";
         try {
             logger.fail("Screenshot is below:" + logger.addScreenCaptureFromPath(screenshotPath));
         } catch (IOException e) {
