@@ -3,12 +3,15 @@
 
 <suite name="extendreport">
     <listeners>
+
         <listener class-name="listenersreport.ListenersOne"/>
+        <listener class-name="listenersreport.Listenerrport"/>
     </listeners>
 
     <test name="listenerReport">
         <classes>
             <class name="listenersreport.LoginSCreenshot"/>
+            <class name="listenersreport.listnerlogin"/>
         </classes>
     </test>
 </suite>

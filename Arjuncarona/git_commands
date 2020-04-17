@@ -10,6 +10,7 @@ work on the current change (see also: git help everyday)
    restore           Restore working tree files
    rm                Remove files from the working tree and from the index
    sparse-checkout   Initialize and modify the sparse-checkout
+   
 
 examine the history and state (see also: git help revisions)
    bisect            Use binary search to find the commit that introduced a bug

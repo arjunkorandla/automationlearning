@@ -1,3 +1,4 @@
+/*
 package Sukuli;
 
 import org.openqa.selenium.By;
@@ -5,9 +6,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.sikuli.api.Screen;
 import org.sikuli.script.FindFailed;
 import org.sikuli.script.Pattern;
-import org.sikuli.script.Screen;
+
+import java.awt.*;
+import java.awt.image.BufferedImage;
 
 public class orangeHRMA_SSIGNMENT {
 	public static void main(String args[]) throws InterruptedException, FindFailed
@@ -51,7 +55,17 @@ public class orangeHRMA_SSIGNMENT {
 		System.out.println("the file not exists");
 
 	}
-	Screen s = new Screen();
+	Screen s = new Screen() {
+        @Override
+        public BufferedImage getScreenshot(int x, int y, int width, int height) {
+            return null;
+        }
+
+        @Override
+        public Dimension getSize() {
+            return null;
+        }
+    };
 	Pattern inpitfiletext = new Pattern(selectionPath+ "select.PNG");
 	Pattern button = new Pattern(selectionPath+"option.PNG");
 	s.wait(inpitfiletext,10);
@@ -70,3 +84,4 @@ public class orangeHRMA_SSIGNMENT {
 		 return false;
 	}
 	}
+*/
