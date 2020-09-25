@@ -14,9 +14,11 @@ public class TC1_login extends BaseClass
 
 
 
+
     @Test(priority = 1)
     public void titleHomepage() {
         Assert.assertEquals(driver.getTitle(),"Dashboard / nopCommerce administration");
+
         logger.info("Assertion passed");
     }
 
@@ -67,6 +69,7 @@ public class TC1_login extends BaseClass
         editCostumerButton();
 
     }
+
 
 
 

@@ -55,8 +55,9 @@ public class Disability {
         System.out.println("still in progress..............");
 
     }
-
+    
     @Test(priority=5)
+    
     void logout()
     {
         System.out.println("loogout test");

@@ -40,6 +40,7 @@ public class LoginPage {
         pwdtxt.sendKeys(pwd);
     }
     public void loginbutton()
+
     {
         buttonclick.click();
     }

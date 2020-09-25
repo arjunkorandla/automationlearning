@@ -9,9 +9,11 @@
         <module name="Arjuncarona" />
         <module name="ArjunNewProject" />
         <module name="WebDriver" />
+        <module name="API" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="API" target="1.5" />
       <module name="Arjuncarona" target="1.8" />
       <module name="ArjunNewProject" target="1.5" />
       <module name="WebDriver" target="1.5" />

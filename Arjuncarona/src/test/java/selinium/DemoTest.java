@@ -6,20 +6,26 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
+
 public class DemoTest extends AddCostumerPage {
     public DemoTest(WebDriver rdriver) {
         super(rdriver);
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, AWTException {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
 
         driver.get("http://admin-demo.nopcommerce.com");
 
         driver.findElement(By.xpath("//input[@type='email']")).sendKeys("admin@yourstore.com");
-        driver.findElement(By.xpath("//input[@type='password']")).sendKeys("");
-        driver.findElement(By.xpath("//input[@type='submit']")).click();
+        driver.findElement(By.xpath("//input[@type='password']")).sendKeys("admin");
+        Robot robot = new Robot();
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        //driver.findElement(By.xpath("//input[@type='submit']")).click();
         driver.findElement(By.xpath("//a[@href='#']//span[contains(text(),'Customers')]")).click();
         driver.findElement(By.xpath("//span[@class='menu-item-title' ][contains(text(),'Customers')]")).click();
         /*driver.findElement(By.xpath("//input[@type='checkbox']")).click();

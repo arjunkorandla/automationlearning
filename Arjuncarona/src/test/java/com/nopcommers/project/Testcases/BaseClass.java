@@ -16,6 +16,8 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -38,8 +40,7 @@ public class BaseClass {
 
 
     @BeforeClass
-    public void setup()
-    {
+    public void setup() throws AWTException {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
 
@@ -52,8 +53,10 @@ public class BaseClass {
         logger.info("username is given");
         lp.setPassword(password);
         logger.info("password is provided");
-        lp.loginbutton();
-        logger.info("login is performed");
+        Robot robot = new Robot();
+        robot.keyPress(KeyEvent.VK_ENTER);
+        //lp.loginbutton();
+        //logger.info("login is performed");
 
     }
 
